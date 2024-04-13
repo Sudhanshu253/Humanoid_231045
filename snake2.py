@@ -61,17 +61,21 @@ def game_loop():
 
                 if event.type == pygame.KEYDOWN:
                     if event.key == pygame.K_RIGHT:
-                        v_x = speed[1]
-                        v_y = speed[0]
+                        if v_x != -speed[1]:
+                            v_x = speed[1]
+                            v_y = speed[0]
                     if event.key == pygame.K_LEFT:
-                        v_x = -speed[1]
-                        v_y = speed[0]
+                        if v_x != speed[1]:
+                            v_x = -speed[1]
+                            v_y = speed[0]
                     if event.key == pygame.K_UP:
-                        v_y = -speed[1]
-                        v_x = speed[0]
+                        if v_y != speed[1]:
+                            v_y = -speed[1]
+                            v_x = speed[0]
                     if event.key == pygame.K_DOWN:
-                        v_y = speed[1]
-                        v_x = speed[0]
+                        if v_y != -speed[1]:
+                            v_y = speed[1]
+                            v_x = speed[0]
 
             snake_x = snake_x +v_x
             snake_y += v_y
